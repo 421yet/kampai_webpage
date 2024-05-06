@@ -5,11 +5,14 @@ class BodyfulSliverAppBar {
   // const BodyfulSliverAppBar();
 
   static List<Widget> build(BuildContext context, Widget body) {
-    return <Widget>[kampaiAppBarKernel(context), body];
+    return <Widget>[
+      _kampaiAppBarKernel(context),
+      SliverToBoxAdapter(child: body),
+    ];
   }
 }
 
-SliverAppBar kampaiAppBarKernel(BuildContext context) {
+SliverAppBar _kampaiAppBarKernel(BuildContext context) {
   return SliverAppBar(
     expandedHeight: deviceHeight(context) / 5,
     floating: false,
@@ -27,7 +30,9 @@ SliverAppBar kampaiAppBarKernel(BuildContext context) {
     actions: const [
       Padding(
         padding: EdgeInsets.all(8.0),
-        child: Placeholder(child: Text('Logo')), // TODO Logo
+        child: Image(
+          image: AssetImage('assets/image/logo.png'),
+        ),
       ),
     ],
   );

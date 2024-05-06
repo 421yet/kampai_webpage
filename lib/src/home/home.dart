@@ -11,46 +11,62 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
-      Scaffold(
-        extendBodyBehindAppBar: true,
-        backgroundColor: Colors.transparent,
-        drawer: KampaiDrawer(context).builder(),
-        body: Stack(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              height: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(backgroundImage),
-                    fit: determineFit(context, backgroundImage)),
+    return Stack(
+      children: <Widget>[
+        Scaffold(
+          extendBodyBehindAppBar: true,
+          backgroundColor: Colors.transparent,
+          drawer: KampaiDrawer(context).builder(),
+          body: Stack(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(backgroundImage),
+                      fit: determineFit(context, backgroundImage)),
+                ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    style: FilledButton.styleFrom(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero)),
-                    onPressed: doNothing,
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text('MENU',
-                          style: TextStyle(fontSize: kDefaultFontSize * 2)),
+              CustomScrollView(
+                slivers: BodyfulSliverAppBar.build(
+                  context,
+                  SizedBox(
+                    width: deviceWidth(context),
+                    height: deviceHeight(context) * 4 / 5,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        ElevatedButton(
+                          style: FilledButton.styleFrom(
+                            backgroundColor: Colors.black.withAlpha(228),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(2),
+                            ),
+                          ),
+                          onPressed: doNothing,
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'MENU',
+                              style: TextStyle(
+                                fontSize: kDefaultFontSize * 2,
+                                color: Colors.pink,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 1, height: deviceHeight(context) / 10),
+                      ],
                     ),
                   ),
-                  const Row(),
-                ],
+                ),
               ),
-            ),
-            CustomScrollView(
-              slivers: [kampaiAppBarKernel(context)],
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-    ]);
+      ],
+    );
   }
 }
 
