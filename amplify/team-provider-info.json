@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kampaiwebpage-dev-836cb-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-dev-836cb-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-dev-836cb-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-kampaiwebpage-dev-836cb-deployment",
+      "UnauthRoleName": "amplify-kampaiwebpage-dev-836cb-unauthRole",
+      "StackName": "amplify-kampaiwebpage-dev-836cb",
+      "StackId": "arn:aws:cloudformation:us-east-2:637423326267:stack/amplify-kampaiwebpage-dev-836cb/e1a2e410-0b76-11ef-9523-06706bbe473b",
+      "AmplifyAppId": "d1uc7lqj7zwgm9"
+    }
+  }
+}
