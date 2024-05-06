@@ -10,6 +10,32 @@
       "StackName": "amplify-kampaiwebpage-dev-836cb",
       "StackId": "arn:aws:cloudformation:us-east-2:637423326267:stack/amplify-kampaiwebpage-dev-836cb/e1a2e410-0b76-11ef-9523-06706bbe473b",
       "AmplifyAppId": "d1uc7lqj7zwgm9"
+    },
+    "categories": {
+      "auth": {
+        "kampaiwebpage4559768c": {}
+      }
+    }
+  },
+  "ksbwebsite": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-kampaiwebpage-ksbwebsite-c2708-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-ksbwebsite-c2708-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-ksbwebsite-c2708-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-kampaiwebpage-ksbwebsite-c2708-deployment",
+      "UnauthRoleName": "amplify-kampaiwebpage-ksbwebsite-c2708-unauthRole",
+      "StackName": "amplify-kampaiwebpage-ksbwebsite-c2708",
+      "StackId": "arn:aws:cloudformation:us-east-2:637423326267:stack/amplify-kampaiwebpage-ksbwebsite-c2708/5e646c50-0b7a-11ef-86f3-02bc599451bb",
+      "AmplifyAppId": "d2a8yas1m0exg2"
+    },
+    "categories": {
+      "auth": {
+        "kampaiwebpage4559768c": {}
+      },
+      "api": {
+        "kampaiwebpage": {}
+      }
     }
   }
 }
