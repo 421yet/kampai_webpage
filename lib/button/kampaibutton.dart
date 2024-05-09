@@ -15,12 +15,12 @@ class _KampaiButtonState extends State<KampaiButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(12),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(16),
           // minimumSize: const Size(60, 300),
-          backgroundColor: Colors.red,
+          backgroundColor: const Color.fromARGB(255, 225, 28, 13),
           elevation: 5,
           shadowColor: Colors.black,
           shape: RoundedRectangleBorder(
@@ -29,7 +29,7 @@ class _KampaiButtonState extends State<KampaiButton> {
         ),
         onPressed: widget.onPressed,
         child: ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 250),
+          constraints: const BoxConstraints(maxHeight: 300),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

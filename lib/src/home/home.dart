@@ -18,7 +18,6 @@ class Home extends StatelessWidget {
         Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: Colors.transparent,
-          appBar: AppBar(iconTheme: const IconThemeData(color: Colors.white)),
           drawer: KampaiDrawer(context).builder(),
           body: Stack(
             children: <Widget>[

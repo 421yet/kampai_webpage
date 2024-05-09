@@ -60,12 +60,10 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
             colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.red,
-
-              // brightness: Brightness.dark,
+              brightness: Brightness.dark,
             ),
-            textTheme: Typography.blackRedwoodCity,
+            // textTheme: Typography.blackRedwoodCity,
           ),
-          darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
           // TODO darkmode: night photo, lightmode: day photo
 

@@ -10,19 +10,28 @@ class KampaiDrawer {
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/About');
         },
-        child: const Text('About'),
+        child: const Text(
+          'About',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       TextButton(
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/Contact');
         },
-        child: const Text('Contact'),
+        child: const Text(
+          'Contact',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       TextButton(
         onPressed: () {
           Navigator.pushReplacementNamed(context, '/Home');
         },
-        child: const Text('Home'),
+        child: const Text(
+          'Home',
+          style: TextStyle(color: Colors.white),
+        ),
       )
     ];
 

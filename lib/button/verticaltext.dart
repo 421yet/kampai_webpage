@@ -23,11 +23,11 @@ class VerticalText extends Text {
     super.selectionColor,
   }) : super(
           _rotate(text),
-          style: GoogleFonts.ibmPlexSans(
+          style: GoogleFonts.prata(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             color: Colors.white,
-            height: 10 / text.length,
+            height: 12 / text.length,
           ),
           textAlign: TextAlign.center,
           textHeightBehavior: const TextHeightBehavior(
