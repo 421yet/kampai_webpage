@@ -27,6 +27,7 @@ class KampaiDrawer {
     ];
 
     return NavigationDrawer(
+      elevation: 10,
       children: <Widget>[
         const DrawerHeader(
           child: Text(

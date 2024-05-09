@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:kampai_webpage/button/kampaibutton.dart';
+import 'package:kampai_webpage/button/verticaltext.dart';
 import 'package:kampai_webpage/src/appbar/bodyfulsliverappbar.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
@@ -16,6 +18,7 @@ class Home extends StatelessWidget {
         Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: Colors.transparent,
+          appBar: AppBar(iconTheme: const IconThemeData(color: Colors.white)),
           drawer: KampaiDrawer(context).builder(),
           body: Stack(
             children: <Widget>[
@@ -37,30 +40,39 @@ class Home extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        ElevatedButton(
-                          style: FilledButton.styleFrom(
-                            backgroundColor: Colors.black.withAlpha(228),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(2),
+                        // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
+                        Flex(
+                          direction: deviceWidth(context) < 8 * 5 + 64 * 4
+                              ? Axis.vertical
+                              : Axis.horizontal,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            KampaiButton(
+                              child: VerticalText('SUSHI'),
+                              onPressed: () {},
+                              // size: Size(),
                             ),
-                          ),
-                          onPressed: doNothing,
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              'MENU',
-                              style: TextStyle(
-                                fontSize: kDefaultFontSize * 2,
-                                color: Colors.pink,
-                              ),
+                            KampaiButton(
+                              child: VerticalText('LUNCH'),
+                              onPressed: () {},
                             ),
-                          ),
+                            KampaiButton(
+                              child: VerticalText('DINNER'),
+                              onPressed: () {},
+                            ),
+                            KampaiButton(
+                              child: VerticalText('DRINKS'),
+                              onPressed: () {},
+                            ),
+                          ],
                         ),
                         SizedBox(width: 1, height: deviceHeight(context) / 10),
                       ],
                     ),
                   ),
                 ),
+                controller: ScrollController(),
               ),
             ],
           ),
