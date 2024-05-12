@@ -62,7 +62,15 @@ class MyApp extends StatelessWidget {
               seedColor: Colors.red,
               brightness: Brightness.dark,
             ),
-            // textTheme: Typography.blackRedwoodCity,
+            pageTransitionsTheme: PageTransitionsTheme(
+              builders:
+                  Map<TargetPlatform, PageTransitionsBuilder>.fromIterable(
+                TargetPlatform.values,
+                value: (dynamic _) =>
+                    const FadeUpwardsPageTransitionsBuilder(), // TODO find the right animation for YOU!
+              ),
+            ),
+            // pageTransitionsTheme: const PageTransitionsTheme().buildTransitions(route, context, animation, secondaryAnimation, child)
           ),
           themeMode: settingsController.themeMode,
           // TODO darkmode: night photo, lightmode: day photo

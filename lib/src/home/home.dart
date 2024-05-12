@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kampai_webpage/button/kampaibutton.dart';
 import 'package:kampai_webpage/button/verticaltext.dart';
 import 'package:kampai_webpage/src/appbar/bodyfulsliverappbar.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
+import 'package:kampai_webpage/src/home/menu_viewer.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -22,8 +22,8 @@ class Home extends StatelessWidget {
           body: Stack(
             children: <Widget>[
               Container(
-                width: double.infinity,
-                height: double.infinity,
+                width: deviceWidth(context),
+                height: deviceHeight(context),
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(backgroundImage),
@@ -41,7 +41,7 @@ class Home extends StatelessWidget {
                       children: <Widget>[
                         // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
                         Flex(
-                          direction: deviceWidth(context) < 8 * 5 + 64 * 4
+                          direction: deviceWidth(context) < 12 * 5 + 64 * 4
                               ? Axis.vertical
                               : Axis.horizontal,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,20 +49,34 @@ class Home extends StatelessWidget {
                           children: [
                             KampaiButton(
                               child: VerticalText('SUSHI'),
-                              onPressed: () {},
+                              onPressed: () {
+                                lazyPush(
+                                    context,
+                                    MenuViewer()
+                                        .build(context, 'sushi_combined'));
+                              },
                               // size: Size(),
                             ),
                             KampaiButton(
                               child: VerticalText('LUNCH'),
-                              onPressed: () {},
+                              onPressed: () {
+                                lazyPush(context,
+                                    MenuViewer().build(context, 'lunch'));
+                              },
                             ),
                             KampaiButton(
                               child: VerticalText('DINNER'),
-                              onPressed: () {},
+                              onPressed: () {
+                                lazyPush(context,
+                                    MenuViewer().build(context, 'dinner'));
+                              },
                             ),
                             KampaiButton(
                               child: VerticalText('DRINKS'),
-                              onPressed: () {},
+                              onPressed: () {
+                                lazyPush(context,
+                                    MenuViewer().build(context, 'drinks'));
+                              },
                             ),
                           ],
                         ),

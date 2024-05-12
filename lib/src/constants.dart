@@ -45,7 +45,7 @@ MaterialColor primarySwatch = createMaterialColor(Colors.red);
 
 String backgroundImage = '/images/2024-03-25_resized.jpg';
 
-lazyPush(BuildContext context, page) {
+lazyPush(BuildContext context, Widget page) {
   Navigator.push<void>(context,
-      MaterialPageRoute<void>(builder: (BuildContext context) => page()));
+      MaterialPageRoute<void>(builder: (BuildContext context) => page));
 }

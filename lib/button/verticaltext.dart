@@ -4,12 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 /// fontColor is by default Colors.white
 class VerticalText extends Text {
   final String text;
-  @override
-  // final TextStyle? style;
   VerticalText(
     this.text, {
     super.key,
-    // TextStyle? style,
+    TextStyle? style,
     super.strutStyle,
     super.textDirection,
     super.locale,
@@ -23,12 +21,13 @@ class VerticalText extends Text {
     super.selectionColor,
   }) : super(
           _rotate(text),
-          style: GoogleFonts.prata(
-            fontSize: 20,
-            fontWeight: FontWeight.w500,
-            color: Colors.white,
-            height: 12 / text.length,
-          ),
+          style: style ??
+              GoogleFonts.prata(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+                height: (text.length < 12) ? 12 / text.length : null,
+              ),
           textAlign: TextAlign.center,
           textHeightBehavior: const TextHeightBehavior(
             applyHeightToFirstAscent: false,

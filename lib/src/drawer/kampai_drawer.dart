@@ -8,29 +8,47 @@ class KampaiDrawer {
     List<TextButton> children = <TextButton>[
       TextButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/About');
+          Navigator.pushReplacementNamed(context, 'About');
         },
-        child: const Text(
-          'About',
-          style: TextStyle(color: Colors.white),
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'About',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
       TextButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/Contact');
+          Navigator.pushReplacementNamed(context, 'Contact');
         },
-        child: const Text(
-          'Contact',
-          style: TextStyle(color: Colors.white),
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'Contact',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
       TextButton(
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/Home');
+          Navigator.pushReplacementNamed(context, 'Home');
         },
-        child: const Text(
-          'Home',
-          style: TextStyle(color: Colors.white),
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'Home',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
         ),
       )
     ];
