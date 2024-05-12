@@ -21,7 +21,7 @@ class _KampaiButtonState extends State<KampaiButton> {
           padding: const EdgeInsets.all(16),
           // minimumSize: const Size(60, 300),
           backgroundColor: const Color.fromARGB(255, 225, 28, 13),
-          elevation: 5,
+          elevation: 7,
           shadowColor: Colors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2),

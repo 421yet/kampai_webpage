@@ -5,7 +5,7 @@ import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
 class About extends StatelessWidget {
   const About({super.key});
 
-  static const routeName = '/about';
+  static const routeName = '/About';
 
   final Column aboutBody = const Column(
     mainAxisAlignment: MainAxisAlignment.center,

@@ -5,7 +5,7 @@ import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
 class Contact extends StatelessWidget {
   const Contact({super.key});
 
-  static const routeName = '/contact';
+  static const routeName = '/Contact';
 
   final Column contactBody = const Column(
     mainAxisAlignment: MainAxisAlignment.center,
