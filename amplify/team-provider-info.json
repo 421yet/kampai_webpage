@@ -1,41 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-kampaiwebpage-dev-836cb-authRole",
-      "UnauthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-dev-836cb-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-dev-836cb-authRole",
+      "AuthRoleName": "amplify-kampaiwebpage-dev-78581-authRole",
+      "UnauthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-dev-78581-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-dev-78581-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-kampaiwebpage-dev-836cb-deployment",
-      "UnauthRoleName": "amplify-kampaiwebpage-dev-836cb-unauthRole",
-      "StackName": "amplify-kampaiwebpage-dev-836cb",
-      "StackId": "arn:aws:cloudformation:us-east-2:637423326267:stack/amplify-kampaiwebpage-dev-836cb/e1a2e410-0b76-11ef-9523-06706bbe473b",
-      "AmplifyAppId": "d1uc7lqj7zwgm9"
-    },
-    "categories": {
-      "auth": {
-        "kampaiwebpage4559768c": {}
-      }
-    }
-  },
-  "ksbwebsite": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-kampaiwebpage-ksbwebsite-c2708-authRole",
-      "UnauthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-ksbwebsite-c2708-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::637423326267:role/amplify-kampaiwebpage-ksbwebsite-c2708-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-kampaiwebpage-ksbwebsite-c2708-deployment",
-      "UnauthRoleName": "amplify-kampaiwebpage-ksbwebsite-c2708-unauthRole",
-      "StackName": "amplify-kampaiwebpage-ksbwebsite-c2708",
-      "StackId": "arn:aws:cloudformation:us-east-2:637423326267:stack/amplify-kampaiwebpage-ksbwebsite-c2708/5e646c50-0b7a-11ef-86f3-02bc599451bb",
-      "AmplifyAppId": "d2a8yas1m0exg2"
-    },
-    "categories": {
-      "auth": {
-        "kampaiwebpage4559768c": {}
-      },
-      "api": {
-        "kampaiwebpage": {}
-      }
+      "DeploymentBucketName": "amplify-kampaiwebpage-dev-78581-deployment",
+      "UnauthRoleName": "amplify-kampaiwebpage-dev-78581-unauthRole",
+      "StackName": "amplify-kampaiwebpage-dev-78581",
+      "StackId": "arn:aws:cloudformation:us-east-2:637423326267:stack/amplify-kampaiwebpage-dev-78581/2ff7d560-101a-11ef-9def-0294ef1d7b0b",
+      "AmplifyAppId": "d2ajc2ht8771ks"
     }
   }
 }
