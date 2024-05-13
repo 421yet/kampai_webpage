@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kampai_webpage/button/verticaltext.dart';
 import 'package:kampai_webpage/src/constants.dart';
 
 class BodyfulSliverAppBar {
@@ -24,7 +23,7 @@ class BodyfulSliverAppBar {
       )),
       SliverToBoxAdapter(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.black,
           ),
           child: Padding(
@@ -84,10 +83,17 @@ class BodyfulSliverAppBar {
                     ),
                   ],
                 ),
-                Text('Kampai Sushi Bar'),
-                Text('(314) 326-7522'),
-                Text('4949 West Pine Boulevard'),
-                Text('Saint Louis, Missouri'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: <Text>[
+                      Text('Kampai Sushi Bar'),
+                      Text('(314) 326-7522'),
+                      Text('4949 West Pine Boulevard'),
+                      Text('Saint Louis, Missouri'),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
