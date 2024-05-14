@@ -21,7 +21,7 @@ class MenuViewer {
             maxScale: 1,
             constrained: false,
             boundaryMargin: const EdgeInsets.all(8),
-            child: Image.asset('images/menu/$asset.png'),
+            child: Image.asset('assets/images/menu/$asset.png'),
           ),
         ),
         Align(

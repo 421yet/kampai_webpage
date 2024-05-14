@@ -43,7 +43,7 @@ MaterialColor createMaterialColor(Color color) {
 
 MaterialColor primarySwatch = createMaterialColor(Colors.red);
 
-String backgroundImage = '/images/2024-03-25_resized.jpg';
+String backgroundImage = 'assets/images/2024-03-25_resized.jpg';
 
 lazyPush(BuildContext context, Widget page) {
   Navigator.push<void>(context,

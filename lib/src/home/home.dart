@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kampai_webpage/button/kampaibutton.dart';
-import 'package:kampai_webpage/button/verticaltext.dart';
+import 'package:kampai_webpage/src/button/kampaibutton.dart';
+import 'package:kampai_webpage/src/button/verticaltext.dart';
 import 'package:kampai_webpage/src/appbar/bodyfulsliverappbar.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';

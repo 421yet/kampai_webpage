@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kampai_webpage/src/about/about.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/contact/contact.dart';
@@ -58,17 +59,29 @@ class KampaiDrawer {
           ),
         ),
       ),
-      const SizedBox(),
+      SizedBox(height: deviceHeight(context) / 2),
     ];
 
     return NavigationDrawer(
       elevation: 10,
       children: <Widget>[
-        const DrawerHeader(
-          child: Text(
-            'c.1984',
-            style: TextStyle(fontWeight: FontWeight.w100),
-            textAlign: TextAlign.right,
+        DrawerHeader(
+          child: Align(
+            alignment: Alignment.topRight,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  'Kampai Sushi Bar',
+                  style: GoogleFonts.prata(),
+                ),
+                Text(
+                  'c.1984',
+                  style: GoogleFonts.prata(),
+                ),
+              ],
+            ),
           ),
         ),
         ListView.separated(
@@ -94,7 +107,7 @@ class KampaiDrawer {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('Made by Frank with tlc'),
+                  Text('Made by Frank with TLC'),
                   Text('♥', style: TextStyle(color: Colors.red)),
                   Text('.'),
                 ],
