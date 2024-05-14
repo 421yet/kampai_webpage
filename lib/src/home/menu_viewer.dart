@@ -3,10 +3,10 @@ import 'package:flutter/widgets.dart';
 import 'package:kampai_webpage/src/constants.dart';
 
 class MenuViewer {
-  final TransformationController _controller = TransformationController();
+  // final TransformationController _controller = TransformationController();
 
   Widget build(BuildContext context, String asset) {
-    _controller.value = Matrix4.identity() * .4;
+    // _controller.value = Matrix4.identity() * .4;
 
     return Stack(
       children: [
@@ -16,12 +16,16 @@ class MenuViewer {
             decoration: const BoxDecoration(color: Colors.black)),
         Center(
           child: InteractiveViewer(
-            transformationController: _controller,
-            minScale: 0.05,
-            maxScale: 1,
+            // transformationController: _controller,
+            trackpadScrollCausesScale: false,
+            // minScale: 0.05,
+            maxScale: 3,
             constrained: false,
-            boundaryMargin: const EdgeInsets.all(8),
-            child: Image.asset('assets/images/menu/$asset.png'),
+            boundaryMargin: const EdgeInsets.only(bottom: 200),
+            child: Image.asset(
+              'assets/images/menu/$asset.png',
+              width: deviceWidth(context),
+            ),
           ),
         ),
         Align(
