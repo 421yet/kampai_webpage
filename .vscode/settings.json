@@ -1,3 +1,4 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "cmake.sourceDirectory": "C:/Users/adhdm/OneDrive/codes/KampaiWebpage/kampai_webpage/linux"
 }

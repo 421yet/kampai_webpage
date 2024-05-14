@@ -24237,7 +24237,7 @@ abD:function abD(a){this.a=a},
 asc(a,b){var s,r,q,p,o,n=null,m=t.l,l=A.bG(a,n,m).w,k=A.bG(a,n,m).w,j=A.hw(n,n,B.y,n,n,new A.eo(n,n,n,n,n,new A.ob(B.a0,B.i6,B.aw,A.a([A.a7(B.c.aG(229.5),0,0,0),A.a7(102,0,0,0),A.a7(B.c.aG(25.5),0,0,0),A.a7(0,0,0,0)],t.t_),n,n),B.aO),n,n,n,n,n,n,n),i=A.bG(a,n,m).w,h=t.F
 i=A.a([new A.cA(B.Mo,A.kS(new A.cA(B.Mp,A.Qy("assets/images/kampai_white_font.svg",A.bG(a,n,m).w.a.b/10,n),n),i.a.b/5,n),n)],h)
 s=A.hw(n,n,B.y,n,n,B.Gd,n,A.bG(a,n,m).w.a.b/10,n,n,n,n,A.bG(a,n,m).w.a.a)
-m=A.bG(a,n,m).w.a.a<544?B.ay:B.aZ
+m=A.bG(a,n,m).w.a.a<664?B.ay:B.aZ
 r=A.a7_(B.l,new A.ct(A.qh(2),B.u))
 r=A.a6Z(A.Qy("assets/images/delivery/DoorDash_Logo.svg",n,100),new A.a3n(),r)
 q=A.a7_(B.l,new A.ct(A.qh(2),B.u))

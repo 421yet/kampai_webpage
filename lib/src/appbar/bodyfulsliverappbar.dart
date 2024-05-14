@@ -36,7 +36,7 @@ class BodyfulSliverAppBar {
                   padding: const EdgeInsets.all(16),
                   child: Flex(
                     mainAxisSize: MainAxisSize.min,
-                    direction: deviceWidth(context) < 16 * 4 + 480
+                    direction: deviceWidth(context) < 16 * 4 + 600
                         ? Axis.vertical
                         : Axis.horizontal,
                     children: <Widget>[
