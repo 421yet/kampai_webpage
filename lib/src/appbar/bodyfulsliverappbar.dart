@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class BodyfulSliverAppBar {
   // const BodyfulSliverAppBar();
@@ -118,17 +119,37 @@ class BodyfulSliverAppBar {
                     ],
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Column(
-                    children: <Text>[
-                      Text(
+                    children: <Widget>[
+                      const Text(
                         'Kampai Sushi Bar',
                         style: TextStyle(fontSize: 18),
                       ),
-                      Text('\n(314) 326-7522\n'),
-                      Text('4949 West Pine Boulevard'),
-                      Text('Saint Louis, Missouri'),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8, bottom: 20),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                              ),
+                              onPressed: () =>
+                                  launchUrlString('tel://3143672020'),
+                              child: const Text('(314) 367-2020'),
+                            ),
+                            const Text(
+                              'Thank you, kind Customer :)',
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Text('4949 West Pine Boulevard'),
+                      const Text('Saint Louis, Missouri'),
                     ],
                   ),
                 )

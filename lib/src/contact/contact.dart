@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kampai_webpage/src/appbar/bodyfulsliverappbar.dart';
+import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
 
+/// AND HOURS!
 class Contact extends StatelessWidget {
   const Contact({super.key});
 
   static const routeName = '/Contact';
-
-  final Column contactBody = const Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[],
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +16,13 @@ class Contact extends StatelessWidget {
         body: CustomScrollView(
           slivers: BodyfulSliverAppBar.build(
             context,
-            contactBody,
+            Flex(
+              direction: deviceHeight(context) > deviceWidth(context)
+                  ? Axis.horizontal
+                  : Axis.vertical,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Column>[],
+            ),
           ),
         ));
   }

@@ -59,7 +59,7 @@ class KampaiDrawer {
           ),
         ),
       ),
-      SizedBox(height: deviceHeight(context) / 2),
+      SizedBox(height: deviceHeight(context) / 2), // TODO dynamically resize?
     ];
 
     return NavigationDrawer(
