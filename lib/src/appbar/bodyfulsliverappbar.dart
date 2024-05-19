@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kampai_webpage/src/constants.dart';
+import 'package:kampai_webpage/src/home/home.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -222,9 +223,16 @@ SliverAppBar _kampaiAppBarKernel(BuildContext context) {
           height: deviceHeight(context) / 5,
           child: Padding(
             padding: const EdgeInsets.all(6),
-            child: SvgPicture.asset(
-              'assets/images/kampai_white_font.svg',
-              height: deviceHeight(context) / 10,
+            child: MouseRegion(
+              child: GestureDetector(
+                child: SvgPicture.asset(
+                  'assets/images/kampai_white_font.svg',
+                  height: deviceHeight(context) / 10,
+                ),
+                onTap: () {
+                  lazyPush(context, const Home());
+                },
+              ),
             ),
           ),
         ),
