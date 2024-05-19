@@ -124,7 +124,7 @@ class KampaiDrawer {
                       Text('.'),
                     ],
                   ),
-                  Text('v1.3.0'),
+                  Text('v 1.3.1'),
                 ],
               ),
             ),
