@@ -26,7 +26,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "5f93ffa3e83069258a9c479df6f0892c
 "assets/assets/images/menu/sushi_combined.png": "f2e8d4a63f5814b92b5c7c5f75c51198",
 "assets/assets/images/menu/sushi_desc.png": "310ac1237db0b6bef070f2b81964161c",
 "assets/FontManifest.json": "2f1ebedf6364e441385272a1fe631bb1",
-"assets/fonts/MaterialIcons-Regular.otf": "6bfe87097264340d89d9125fda3ac1db",
+"assets/fonts/MaterialIcons-Regular.otf": "805de9924d1055840d237ee48a98fce9",
 "assets/NOTICES": "dcc212dafcfcaa180b0806fe8b9f9e60",
 "assets/packages/amplify_authenticator/assets/social-buttons/google.png": "a1e1d65465c69a65f8d01226ff5237ec",
 "assets/packages/amplify_authenticator/assets/social-buttons/SocialIcons.ttf": "1566e823935d5fe33901f5a074480a20",
@@ -47,9 +47,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "5f93ffa3e83069258a9c479df6f0892c
 "canvaskit/skwasm.worker.js": "bfb704a6c714a75da9ef320991e88b03",
 "favicon.png": "9ce86b0170dc569e1349c6b53230fffb",
 "flutter.js": "c71a09214cb6f5f8996a531350400a9a",
-"index.html": "7d18eb29c4884f741d51cec211e9e04d",
-"/": "7d18eb29c4884f741d51cec211e9e04d",
-"main.dart.js": "62092a8a1e0c4593c3c4bb615580592d",
+"index.html": "d3ba8811a09542efb211a5dfef10b90b",
+"/": "d3ba8811a09542efb211a5dfef10b90b",
+"main.dart.js": "432648427164081770a16cf78aef7c25",
 "manifest.json": "3a212681652b90c1f89096339df1de56",
 "version.json": "46f04e406f0182271b39a581448c0365"};
 // The application shell files that are downloaded before a service worker can

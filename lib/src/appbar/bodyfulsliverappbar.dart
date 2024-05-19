@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -29,7 +31,7 @@ class BodyfulSliverAppBar {
             color: Colors.black,
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.only(top: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -120,12 +122,12 @@ class BodyfulSliverAppBar {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: <Widget>[
-                      const Text(
+                      Text(
                         'Kampai Sushi Bar',
-                        style: TextStyle(fontSize: 18),
+                        style: GoogleFonts.prata(fontSize: 24),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 8, bottom: 20),
@@ -139,10 +141,11 @@ class BodyfulSliverAppBar {
                               ),
                               onPressed: () =>
                                   launchUrlString('tel://3143672020'),
-                              child: const Text('(314) 367-2020'),
+                              child: const Text('(314) 367-2020',
+                                  style: TextStyle(fontSize: 16)),
                             ),
                             const Text(
-                              'Thank you, kind Customer :)',
+                              'TY Sam :)',
                               style: TextStyle(fontSize: 10),
                             ),
                           ],
@@ -150,6 +153,26 @@ class BodyfulSliverAppBar {
                       ),
                       const Text('4949 West Pine Boulevard'),
                       const Text('Saint Louis, Missouri'),
+                      Divider(
+                        indent: deviceWidth(context) * 2 / 5,
+                        endIndent: deviceWidth(context) * 2 / 5,
+                      ),
+                      TextButton(
+                        child: const Text('kampai4949stl@gmail.com'),
+                        onPressed: () {
+                          Clipboard.setData(
+                            const ClipboardData(
+                                text: 'kampai4949stl@gmail.com'),
+                          );
+                          showSnackBar(
+                            'Our address is copied to your clipboard.',
+                            context,
+                          );
+                        },
+                      )
+
+                      /// TODO add back to top button
+                      /// floating action button?
                     ],
                   ),
                 )
@@ -167,10 +190,12 @@ SliverAppBar _kampaiAppBarKernel(BuildContext context) {
     elevation: 0,
     expandedHeight: deviceHeight(context) / 5,
     toolbarHeight: deviceHeight(context) / 10,
+    collapsedHeight: deviceHeight(context) / 10,
     scrolledUnderElevation: 5,
     floating: false,
     pinned: true,
     snap: false,
+    foregroundColor: Colors.white,
     backgroundColor: Colors.transparent,
     forceMaterialTransparency: true,
     flexibleSpace: FlexibleSpaceBar(
@@ -183,7 +208,7 @@ SliverAppBar _kampaiAppBarKernel(BuildContext context) {
             colors: [
               Colors.black.withOpacity(.9),
               Colors.black.withOpacity(.4),
-              Colors.black.withOpacity(0.1),
+              Colors.black.withOpacity(.1),
               Colors.black.withOpacity(0),
             ],
           ),

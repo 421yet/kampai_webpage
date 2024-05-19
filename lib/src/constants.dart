@@ -49,3 +49,13 @@ lazyPush(BuildContext context, Widget page) {
   Navigator.push<void>(context,
       MaterialPageRoute<void>(builder: (BuildContext context) => page));
 }
+
+void showSnackBar(String text, BuildContext context) {
+  final snackBar = SnackBar(
+    content: Text(text),
+  );
+
+  ScaffoldMessenger.of(context)
+    ..removeCurrentSnackBar()
+    ..showSnackBar(snackBar);
+}

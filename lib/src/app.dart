@@ -66,8 +66,7 @@ class MyApp extends StatelessWidget {
               builders:
                   Map<TargetPlatform, PageTransitionsBuilder>.fromIterable(
                 TargetPlatform.values,
-                value: (dynamic _) =>
-                    const FadeUpwardsPageTransitionsBuilder(), // TODO find the right animation for YOU!
+                value: (dynamic _) => const FadeUpwardsPageTransitionsBuilder(),
               ),
             ),
             // pageTransitionsTheme: const PageTransitionsTheme().buildTransitions(route, context, animation, secondaryAnimation, child)

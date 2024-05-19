@@ -13,90 +13,80 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Scaffold(
-          extendBodyBehindAppBar: true,
-          backgroundColor: Colors.transparent,
-          drawer: KampaiDrawer(context).builder(),
-          body: Stack(
-            children: <Widget>[
-              Container(
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
+      drawer: KampaiDrawer(context).builder(),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            width: deviceWidth(context),
+            height: deviceHeight(context),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(backgroundImage),
+                  fit: determineFit(context, backgroundImage)),
+            ),
+          ),
+          CustomScrollView(
+            slivers: BodyfulSliverAppBar.build(
+              context,
+              SizedBox(
                 width: deviceWidth(context),
-                height: deviceHeight(context),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(backgroundImage),
-                      fit: determineFit(context, backgroundImage)),
-                ),
-              ),
-              CustomScrollView(
-                slivers: BodyfulSliverAppBar.build(
-                  context,
-                  SizedBox(
-                    width: deviceWidth(context),
-                    height: deviceHeight(context) * 4 / 5,
-                    child: Column(
+                height: deviceHeight(context) * 4 / 5,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
+                    Flex(
+                      direction: deviceWidth(context) < 12 * 5 + 64 * 4
+                          ? Axis.vertical
+                          : Axis.horizontal,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
-                        Flex(
-                          direction: deviceWidth(context) < 12 * 5 + 64 * 4
-                              ? Axis.vertical
-                              : Axis.horizontal,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            KampaiButton(
-                              child: VerticalText('SUSHI'),
-                              onPressed: () {
-                                lazyPush(
-                                    context,
-                                    MenuViewer()
-                                        .build(context, 'sushi_combined'));
-                              },
-                              // size: Size(),
-                            ),
-                            KampaiButton(
-                              child: VerticalText('LUNCH'),
-                              onPressed: () {
-                                lazyPush(context,
-                                    MenuViewer().build(context, 'lunch'));
-                              },
-                            ),
-                            KampaiButton(
-                              child: VerticalText('DINNER'),
-                              onPressed: () {
-                                lazyPush(context,
-                                    MenuViewer().build(context, 'dinner'));
-                              },
-                            ),
-                            KampaiButton(
-                              child: VerticalText('DRINKS'),
-                              onPressed: () {
-                                lazyPush(context,
-                                    MenuViewer().build(context, 'drinks'));
-                              },
-                            ),
-                          ],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        KampaiButton(
+                          child: VerticalText('SUSHI'),
+                          onPressed: () {
+                            lazyPush(context,
+                                MenuViewer().build(context, 'sushi_combined'));
+                          },
+                          // size: Size(),
                         ),
-                        SizedBox(width: 1, height: deviceHeight(context) / 10),
+                        KampaiButton(
+                          child: VerticalText('LUNCH'),
+                          onPressed: () {
+                            lazyPush(
+                                context, MenuViewer().build(context, 'lunch'));
+                          },
+                        ),
+                        KampaiButton(
+                          child: VerticalText('DINNER'),
+                          onPressed: () {
+                            lazyPush(
+                                context, MenuViewer().build(context, 'dinner'));
+                          },
+                        ),
+                        KampaiButton(
+                          child: VerticalText('DRINKS'),
+                          onPressed: () {
+                            lazyPush(
+                                context, MenuViewer().build(context, 'drinks'));
+                          },
+                        ),
                       ],
                     ),
-                  ),
+                    SizedBox(width: 1, height: deviceHeight(context) / 10),
+                  ],
                 ),
-                controller: ScrollController(),
               ),
-            ],
+            ),
+            controller: ScrollController(),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
-}
-
-doNothing() {
-  // TODO do SOMETHING
 }
 
 BoxFit determineFit(BuildContext context, String imageAddress) {
@@ -106,7 +96,7 @@ BoxFit determineFit(BuildContext context, String imageAddress) {
   // File imageFile = File(imageAdress);
   // var image = await decodeImageFromList(image.readBytesSync());
   // double imageAspectRatio = image.width / imageheight;
-  double imageAspectRatio = 68 / 51; // TODO generalize this using above
+  double imageAspectRatio = 68 / 51; // TODO(low) generalize this using above
 
   double windowAspectRatio = dW / dH;
 
