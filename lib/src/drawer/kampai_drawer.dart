@@ -10,6 +10,7 @@ class KampaiDrawer {
   KampaiDrawer(this.context);
 
   Drawer builder() {
+    /// TODO (low) I want to make it less wide but I need to wrap it in a sized box/container
     return Drawer(
       elevation: 10,
       child: Column(
@@ -115,7 +116,7 @@ class KampaiDrawer {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('More stuff coming soon.'),
+                  Text('More stuff coming soon'),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -124,7 +125,7 @@ class KampaiDrawer {
                       Text('.'),
                     ],
                   ),
-                  Text('v 1.3.1'),
+                  Text('v1.3.2'), // leave out the space bar
                 ],
               ),
             ),

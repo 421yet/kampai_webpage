@@ -56,190 +56,171 @@ class _ContactState extends State<Contact> {
         controller: controller,
         slivers: BodyfulSliverAppBar.build(
           context,
-          Flex(
-            direction: deviceHeight(context) > deviceWidth(context)
-                ? Axis.vertical
-                : Axis.horizontal,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              /// Column of hours
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(24),
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      side: BorderSide(color: Colors.white.withOpacity(.5))),
+                  child: const Padding(
+                    padding: EdgeInsets.only(
+                      top: 12,
+                      bottom: 7,
+                      left: 30,
+                      right: 30,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Text('Contact'),
+                        Icon(Icons.arrow_drop_down_sharp),
+                      ],
+                    ),
+                  ),
+                  onPressed: () =>
+                      controller.jumpTo(controller.position.maxScrollExtent),
+                ),
+              ),
+              Flex(
+                direction: deviceWidth(context) < 500
+                    ? Axis.vertical
+                    : Axis.horizontal,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  /// Column of hours
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(24),
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Lunch.',
-                          style: GoogleFonts.prata(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const Divider(),
-                        const Text('MON – FRI: 11am – 2pm')
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Dinner.',
-                          style: GoogleFonts.prata(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                          ),
-                        ),
-                        const Divider(),
-                        const Text('MON – THU: 5pm – 10pm'),
-                        const Text('FRI – SAT: 5pm – 11pm'),
-                        const Text('SUN: 5pm – 9pm'),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          side:
-                              BorderSide(color: Colors.white.withOpacity(.5))),
-                      child: const Padding(
-                        padding: EdgeInsets.only(top: 12, bottom: 8),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Text('Contact'),
-                            Icon(Icons.arrow_drop_down_sharp),
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Lunch.',
+                              style: GoogleFonts.prata(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const Divider(thickness: 0),
+                            const Text('MON – FRI: 11am – 2pm'),
+                            const SizedBox(height: 40),
+                            Text(
+                              'Dinner.',
+                              style: GoogleFonts.prata(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const Divider(thickness: 0),
+                            const Text('MON – THU: 5pm – 10pm'),
+                            const Text('FRI – SAT: 5pm – 11pm'),
+                            const Text('SUN: 5pm – 9pm'),
+                            const SizedBox(height: 40),
                           ],
                         ),
-                      ),
-                      onPressed: () => controller
-                          .jumpTo(controller.position.maxScrollExtent),
+                      ],
                     ),
-                  )
-                ],
-              ),
+                  ),
 
-              /// email column
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Send Us an Email.',
-                        style: GoogleFonts.prata(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const Divider(thickness: 0),
-                      // const Text('kampai4949stl@gmail.com'),
-                      SizedBox(
-                        width: 300,
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                            labelText: 'Title',
+                  SizedBox(
+                    width: deviceWidth(context) / 10,
+                    height: deviceHeight(context) / 10,
+                  ),
+
+                  /// email column
+                  Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'Send Us an Email.',
+                            style: GoogleFonts.prata(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ),
                           ),
-                          validator: (String? value) {
-                            return (value != null && value.isEmpty)
-                                ? 'Empty Title'
-                                : null;
-                          },
-                          onSaved: (String? value) {
-                            _title2Send = value!;
-                          },
-                        ),
-                      ),
-                      // SizedBox(
-                      //   width: 300,
-                      //   child: TextFormField(
-                      //     decoration: const InputDecoration(
-                      //       labelText: 'Your Email',
-                      //     ),
-                      //     validator: (String? value) {
-                      //       if (value != null) {
-                      //         RegExp exp = RegExp(
-                      //             // very long regex for validating emails
-                      //             r'''(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])''');
-                      //         return (exp.hasMatch(value))
-                      //             ? null
-                      //             : 'Invalid address';
-                      //       } else {
-                      //         return null;
-                      //       }
-                      //     },
-                      //   ),
-                      // ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16),
-                        child: SizedBox(
-                          width: 300,
-                          child: TextFormField(
-                              minLines: 7,
-                              maxLines: null,
+                          const Divider(thickness: 0),
+                          SizedBox(
+                            /// TODO textInputController might need some touches:
+                            /// when on mobile web, when editing text,
+                            /// when screen is displaying fields on its lower half-ish
+                            /// the keyboard has a big box above it covering most,
+                            /// the box seems to scale with where the scroll is
+                            width: 300,
+                            child: TextFormField(
                               decoration: const InputDecoration(
-                                labelText: 'Body',
-                                alignLabelWithHint: true,
-                                border: OutlineInputBorder(),
+                                labelText: 'Title',
                               ),
                               validator: (String? value) {
                                 return (value != null && value.isEmpty)
-                                    ? 'Empty message'
+                                    ? 'Empty Title'
                                     : null;
                               },
                               onSaved: (String? value) {
-                                _body2Send = value!;
-                              }),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 16),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white.withOpacity(.75)),
-                          child: const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text('Send',
-                                style: TextStyle(color: Colors.black)),
+                                _title2Send = value!;
+                              },
+                            ),
                           ),
-                          onPressed: () {
-                            FormState? state = _formKey.currentState;
-                            if (state == null) {
-                              return;
-                            } else if (state.validate()) {
-                              // TODO send email using backend... omg
-                              // sendEmail(context);
-                              state.save();
-                              openEmail();
-                            }
-                          },
-                        ),
-                      )
-                    ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: SizedBox(
+                              width: 300,
+                              child: TextFormField(
+                                  minLines: 7,
+                                  maxLines: null,
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                  ),
+                                  validator: (String? value) {
+                                    return (value != null && value.isEmpty)
+                                        ? 'Empty message'
+                                        : null;
+                                  },
+                                  onSaved: (String? value) {
+                                    _body2Send = value!;
+                                  }),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 16),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      Colors.white.withOpacity(.75)),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text('Send',
+                                    style: TextStyle(color: Colors.black)),
+                              ),
+                              onPressed: () {
+                                FormState? state = _formKey.currentState;
+                                if (state == null) {
+                                  return;
+                                } else if (state.validate()) {
+                                  // TODO send email using backend... omg
+                                  // sendEmail(context);
+                                  state.save();
+                                  openEmail();
+                                }
+                              },
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ],
           ),

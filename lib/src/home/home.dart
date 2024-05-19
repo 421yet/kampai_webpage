@@ -33,7 +33,9 @@ class Home extends StatelessWidget {
               context,
               SizedBox(
                 width: deviceWidth(context),
-                height: deviceHeight(context) * 4 / 5,
+                height: (deviceHeight(context) > 500)
+                    ? deviceHeight(context) * 4 / 5
+                    : null,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[

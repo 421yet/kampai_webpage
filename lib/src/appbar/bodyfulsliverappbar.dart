@@ -31,10 +31,14 @@ class BodyfulSliverAppBar {
             color: Colors.black,
           ),
           child: Padding(
-            padding: const EdgeInsets.only(top: 16),
+            padding: const EdgeInsets.only(top: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Text(
+                  'Kampai Sushi Bar',
+                  style: GoogleFonts.prata(fontSize: 24),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Flex(
@@ -125,12 +129,8 @@ class BodyfulSliverAppBar {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: <Widget>[
-                      Text(
-                        'Kampai Sushi Bar',
-                        style: GoogleFonts.prata(fontSize: 24),
-                      ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 8, bottom: 20),
+                        padding: const EdgeInsets.only(bottom: 20),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
