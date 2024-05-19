@@ -8,6 +8,7 @@ class About extends StatelessWidget {
 
   static const routeName = '/About';
 
+  /// TODO make the fucking thing
   final Column aboutBody = const Column();
 
   @override
