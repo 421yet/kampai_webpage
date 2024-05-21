@@ -29,6 +29,7 @@ class Home extends StatelessWidget {
             ),
           ),
           CustomScrollView(
+            // controller: controller,
             slivers: BodyfulSliverAppBar.build(
               context,
               SizedBox(
@@ -83,7 +84,6 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            controller: ScrollController(),
           ),
         ],
       ),

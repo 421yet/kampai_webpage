@@ -94,37 +94,32 @@ class _ContactState extends State<Contact> {
                   Padding(
                     padding: const EdgeInsets.all(24),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Lunch.',
-                              style: GoogleFonts.prata(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const Divider(thickness: 0),
-                            const Text('MON – FRI: 11am – 2pm'),
-                            const SizedBox(height: 40),
-                            Text(
-                              'Dinner.',
-                              style: GoogleFonts.prata(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const Divider(thickness: 0),
-                            const Text('MON – THU: 5pm – 10pm'),
-                            const Text('FRI – SAT: 5pm – 11pm'),
-                            const Text('SUN: 5pm – 9pm'),
-                            const SizedBox(height: 40),
-                          ],
+                        Text(
+                          'Lunch.',
+                          style: GoogleFonts.prata(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
                         ),
+                        const Divider(thickness: 0),
+                        const Text('MON – FRI: 11am – 2pm'),
+                        const SizedBox(height: 40),
+                        Text(
+                          'Dinner.',
+                          style: GoogleFonts.prata(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
+                        ),
+                        const Divider(thickness: 0),
+                        const Text('MON – THU: 5pm – 10pm'),
+                        const Text('FRI – SAT: 5pm – 11pm'),
+                        const Text('SUN: 5pm – 9pm'),
+                        const SizedBox(height: 40),
                       ],
                     ),
                   ),
@@ -152,11 +147,12 @@ class _ContactState extends State<Contact> {
                           ),
                           const Divider(thickness: 0),
                           SizedBox(
-                            /// TODO textInputController might need some touches:
+                            /// TODO (frozen until...) textInputController might need some touches:
                             /// when on mobile web, when editing text,
                             /// when screen is displaying fields on its lower half-ish
                             /// the keyboard has a big box above it covering most,
                             /// the box seems to scale with where the scroll is
+                            /// TURNS OUT: https://github.com/flutter/flutter/issues/73752
                             width: 300,
                             child: TextFormField(
                               decoration: const InputDecoration(
@@ -208,7 +204,7 @@ class _ContactState extends State<Contact> {
                                 if (state == null) {
                                   return;
                                 } else if (state.validate()) {
-                                  // TODO send email using backend... omg
+                                  // TODO (low) send email using backend? ugh
                                   // sendEmail(context);
                                   state.save();
                                   openEmail();

@@ -130,28 +130,19 @@ class BodyfulSliverAppBar {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 15),
-                              ),
-                              onPressed: () =>
-                                  launchUrlString('tel://3143672020'),
-                              child: const Text('(314) 367-2020',
-                                  style: TextStyle(fontSize: 16)),
-                            ),
-                            const Text(
-                              'TY Sam :)',
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          ],
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
                         ),
+                        onPressed: () => launchUrlString('tel://3143672020'),
+                        child: const Text('(314) 367-2020',
+                            style: TextStyle(fontSize: 16)),
                       ),
+                      const Text(
+                        'TY Sam :)',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                      const SizedBox(height: 20),
                       const Text('4949 West Pine Boulevard'),
                       const Text('Saint Louis, Missouri'),
                       Divider(
@@ -166,13 +157,47 @@ class BodyfulSliverAppBar {
                                 text: 'kampai4949stl@gmail.com'),
                           );
                           showSnackBar(
-                            'Our address is copied to your clipboard.',
+                            'Our email address was copied to your clipboard.',
                             context,
                           );
                         },
-                      )
+                      ),
+                      const SizedBox(height: 40),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                side: BorderSide(
+                                  color: Colors.white.withOpacity(0.5),
+                                ),
+                              ),
+                              foregroundColor: Colors.white,
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 8),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.arrow_drop_up),
+                                      ],
+                                    ),
+                                    Text(
+                                      'Back To Top',
+                                      style: TextStyle(),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            onPressed: () {}),
+                      ),
 
-                      /// TODO add back to top button
                       /// floating action button?
                     ],
                   ),
