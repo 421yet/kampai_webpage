@@ -35,6 +35,7 @@ class BodyfulSliverAppBar {
             padding: const EdgeInsets.only(top: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Text(
                   'Kampai Sushi Bar',
@@ -178,7 +179,8 @@ class BodyfulSliverAppBar {
                             child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 8),
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                padding: EdgeInsets.only(
+                                    left: 20, right: 20, bottom: 5),
                                 child: Column(
                                   children: [
                                     Row(
@@ -197,11 +199,9 @@ class BodyfulSliverAppBar {
                             ),
                             onPressed: () {}),
                       ),
-
-                      /// floating action button?
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -249,6 +249,7 @@ SliverAppBar _kampaiAppBarKernel(BuildContext context) {
           child: Padding(
             padding: const EdgeInsets.all(6),
             child: MouseRegion(
+              // cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 child: SvgPicture.asset(
                   'assets/images/kampai_white_font.svg',

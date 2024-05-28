@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kampai_webpage/src/catering/catering.dart';
 import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/contact/contact.dart';
 import 'package:kampai_webpage/src/home/home.dart';
@@ -50,33 +51,18 @@ class KampaiDrawer {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: TextButton(
-              onPressed: null,
-              child: Padding(
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              onPressed: () {
+                lazyPush(context, const Catering());
+              },
+              child: const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Catering',
                   style: TextStyle(
-                    // color: Colors.white,
-                    fontSize: 16,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: TextButton(
-              onPressed: null,
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text(
-                  'About Us',
-                  style: TextStyle(
-                    // color: Colors.white,
                     fontSize: 16,
                     decoration: TextDecoration.underline,
                   ),
@@ -87,12 +73,26 @@ class KampaiDrawer {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextButton(
+              style: TextButton.styleFrom(foregroundColor: Colors.white),
+              onPressed: null,
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'About Us',
+                  style: TextStyle(
+                    fontSize: 16,
+                    // TODO uncomment below when deployed
+                    // decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => const Home()),
-                );
+                lazyPush(context, const Home());
               },
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -122,10 +122,9 @@ class KampaiDrawer {
                     children: [
                       Text('Made by Frank with TLC'),
                       Text('♥', style: TextStyle(color: Colors.red)),
-                      Text('.'),
                     ],
                   ),
-                  Text('v1.3.2'), // leave out the space bar
+                  Text('v 1.4.0'),
                 ],
               ),
             ),

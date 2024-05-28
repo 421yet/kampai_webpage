@@ -14,12 +14,14 @@ dependencies:
   amplify_auth_cognito: ^1.0.0
   amplify_authenticator: ^1.0.0
   amplify_flutter: ^1.8.0
+  csv: ^6.0.0
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
+  http: ^1.2.1
   url_launcher: ^6.2.6
 
 dev_dependencies:

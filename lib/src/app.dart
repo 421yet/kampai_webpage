@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kampai_webpage/src/about/about.dart';
+import 'package:kampai_webpage/src/catering/catering.dart';
 import 'package:kampai_webpage/src/contact/contact.dart';
 
 import 'home/home.dart';
@@ -89,6 +90,8 @@ class MyApp extends StatelessWidget {
                     return const About();
                   case Contact.routeName:
                     return const Contact();
+                  case Catering.routeName:
+                    return const Catering();
                   default:
                     return const Home();
                 }

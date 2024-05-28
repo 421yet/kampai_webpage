@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 Color primaryColor = Colors.black;
@@ -46,7 +47,7 @@ MaterialColor primarySwatch = createMaterialColor(Colors.red);
 String backgroundImage = 'assets/images/2024-03-25_resized.jpg';
 
 lazyPush(BuildContext context, Widget page) {
-  Navigator.pushReplacement(context,
+  Navigator.push(context,
       MaterialPageRoute<void>(builder: (BuildContext context) => page));
 }
 
@@ -58,4 +59,18 @@ void showSnackBar(String text, BuildContext context) {
   ScaffoldMessenger.of(context)
     ..removeCurrentSnackBar()
     ..showSnackBar(snackBar);
+}
+
+Offset findPos(GlobalKey key) {
+  BuildContext? context = key.currentContext;
+  if (context == null) {
+    if (kDebugMode) {
+      print(
+          'constants/findPos(): Couldn\'t find current build context for widget\'s GlobalKey. \n'
+          'Perhaps widget not mounted.');
+    }
+    throw Exception('');
+  }
+  RenderBox box = context.findRenderObject() as RenderBox;
+  return box.localToGlobal(Offset.zero);
 }

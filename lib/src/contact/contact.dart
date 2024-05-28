@@ -88,7 +88,8 @@ class _ContactState extends State<Contact> {
                     ? Axis.vertical
                     : Axis.horizontal,
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment
+                    .start, // TODO (visual) figure out of center or start looks better
                 children: <Widget>[
                   /// Column of hours
                   Padding(
