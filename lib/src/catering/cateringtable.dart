@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CateringTable extends StatefulWidget {
   final List<List<dynamic>> _data;
@@ -23,15 +25,26 @@ class _CateringTableState extends State<CateringTable> {
   }
 
   _populateTable() {
-    tableSkeleton = data.map((row) {
-      List<Widget> countlessRow = row.getRange(0, row.length - 1).map((column) {
-        return Text(
-          column.toString(),
+    tableSkeleton.add(TableRow(
+        children: data.first.getRange(0, data.first.length - 1).map((cell) {
+      return TableCell(
+          child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(cell.toString(), style: GoogleFonts.prata())));
+    }).toList()));
+    tableSkeleton.addAll(data.getRange(1, data.length - 1).map((row) {
+      return TableRow(
+          children: row.getRange(0, row.length - 1).map((column) {
+        return TableCell(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              column.toString(),
+            ),
+          ),
         );
-      }).toList();
-      countlessRow.add();
-      return TableRow(children: countlessRow);
-    }).toList();
+      }).toList());
+    }).toList());
 
     /// DOESNT FUCKING WORK AND I DONT KNOW WHY
     // establish 0th row as column names
@@ -88,13 +101,48 @@ class _CateringTableState extends State<CateringTable> {
 
   @override
   Widget build(BuildContext context) {
-    return Table(
-      defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-      // border: TableBorder.symmetric(
-      // inside: BorderSide(color: Colors.white.withOpacity(.5)),
-      // outside: BorderSide.none,
-      // ),
-      children: tableSkeleton,
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Row(
+            children: [
+              const Text('Explore our catering options in depth using our '),
+              ElevatedButton(
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero, // Set this
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 12, horizontal: 8), // and this
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text('Google Sheets'),
+                    SvgPicture.asset(
+                      'images/menu/Google_Sheets.svg',
+                      height: 20,
+                    ),
+                    const Text(' Tool'),
+                  ],
+                ),
+                onPressed: () {
+                  launchUrl(Uri.parse(
+                      'https://docs.google.com/spreadsheets/d/1QAZJdcIPVDhRowuiLAdVRS17LTFZOzQlP35ylqamZcw/edit?usp=sharing'));
+                },
+              ),
+              const Text('.'),
+            ],
+          ),
+        ),
+        Table(
+          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+          border: TableBorder.symmetric(
+            inside: BorderSide(color: Colors.white.withOpacity(.25)),
+            outside: BorderSide(color: Colors.white.withOpacity(.25)),
+          ),
+          children: tableSkeleton,
+        ),
+      ],
     );
   }
 }

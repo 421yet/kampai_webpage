@@ -147,6 +147,7 @@ class BodyfulSliverAppBar {
                       const Text('4949 West Pine Boulevard'),
                       const Text('Saint Louis, Missouri'),
                       Divider(
+                        thickness: 0,
                         indent: deviceWidth(context) * 2 / 5,
                         endIndent: deviceWidth(context) * 2 / 5,
                       ),

@@ -59,7 +59,7 @@ class _ContactState extends State<Contact> {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(24),
+                padding: const EdgeInsets.all(30),
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
                       foregroundColor: Colors.white,
@@ -98,7 +98,7 @@ class _ContactState extends State<Contact> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Lunch.',
+                          'Lunch',
                           style: GoogleFonts.prata(
                             fontSize: 20,
                             fontWeight: FontWeight.w700,
@@ -109,7 +109,7 @@ class _ContactState extends State<Contact> {
                         const Text('MON – FRI: 11am – 2pm'),
                         const SizedBox(height: 40),
                         Text(
-                          'Dinner.',
+                          'Dinner',
                           style: GoogleFonts.prata(
                             fontSize: 20,
                             fontWeight: FontWeight.w700,
