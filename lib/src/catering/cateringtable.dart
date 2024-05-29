@@ -119,7 +119,7 @@ class _CateringTableState extends State<CateringTable> {
                   children: [
                     const Text('Google Sheets'),
                     SvgPicture.asset(
-                      'images/menu/Google_Sheets.svg',
+                      'assets/images/menu/Google_Sheets.svg',
                       height: 20,
                     ),
                     const Text(' Tool'),

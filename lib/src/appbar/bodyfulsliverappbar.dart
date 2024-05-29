@@ -250,7 +250,7 @@ SliverAppBar _kampaiAppBarKernel(BuildContext context) {
           child: Padding(
             padding: const EdgeInsets.all(6),
             child: MouseRegion(
-              // cursor: SystemMouseCursors.click,
+              cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 child: SvgPicture.asset(
                   'assets/images/kampai_white_font.svg',
