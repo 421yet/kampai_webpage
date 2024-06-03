@@ -92,7 +92,7 @@ class _CateringTableState extends State<CateringTable> {
     //     subTableRowChildren.add(TableCell(child: Text(cell.toString())));
     //   }
     //   subTableRowChildren.add(const TableCell(
-    //       child: Text('0'))); // adding count, TODO make Object oriented
+    //       child: Text('0'))); // adding count, TODO (obsolete for now) make Object oriented
     //   subTableChildren.add(TableRow(children: subTableRowChildren)); //
     // }
     // catContent.add(Table(children: subTableChildren)); // add last cat as table
