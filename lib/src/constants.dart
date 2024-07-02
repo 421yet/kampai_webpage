@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -73,4 +75,9 @@ Offset findPos(GlobalKey key) {
   }
   RenderBox box = context.findRenderObject() as RenderBox;
   return box.localToGlobal(Offset.zero);
+}
+
+double arctanOffset(Offset? pos, Offset pos_0) {
+  if (pos == null) return 0;
+  return atan((pos.dx - pos_0.dx) / (pos.dy - pos_0.dy));
 }

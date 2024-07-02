@@ -48,7 +48,6 @@ class HomeState extends State<Home> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
                     Flex(
                       direction: deviceWidth(context) < 12 * 5 + 64 * 4
                           ? Axis.vertical
