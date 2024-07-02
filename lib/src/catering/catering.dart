@@ -7,18 +7,27 @@ import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
 import 'package:csv/csv.dart';
 import 'package:http/http.dart';
 
-class Catering extends StatelessWidget {
+class Catering extends StatefulWidget {
   const Catering({super.key});
 
   static const routeName = '/Catering';
+
+  @override
+  State<StatefulWidget> createState() => CateringState();
+}
+
+class CateringState extends State<Catering> {
+  final ScrollController _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: KampaiDrawer(context).builder(),
       body: CustomScrollView(
+        controller: _controller,
         slivers: BodyfulSliverAppBar.build(
           context,
+          _controller,
           const _CateringBody(),
         ),
       ),

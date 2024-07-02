@@ -6,10 +6,17 @@ import 'package:kampai_webpage/src/constants.dart';
 import 'package:kampai_webpage/src/drawer/kampai_drawer.dart';
 import 'package:kampai_webpage/src/home/menu_viewer.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
   static const routeName = '/';
+
+  @override
+  State<StatefulWidget> createState() => HomeState();
+}
+
+class HomeState extends State<Home> {
+  final ScrollController _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +36,10 @@ class Home extends StatelessWidget {
             ),
           ),
           CustomScrollView(
-            // controller: controller,
+            controller: _controller,
             slivers: BodyfulSliverAppBar.build(
               context,
+              _controller,
               SizedBox(
                 width: deviceWidth(context),
                 height: (deviceHeight(context) > 500)

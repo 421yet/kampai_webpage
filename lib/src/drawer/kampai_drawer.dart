@@ -124,7 +124,7 @@ class KampaiDrawer {
                       Text('♥', style: TextStyle(color: Colors.red)),
                     ],
                   ),
-                  Text('v 1.4.0'),
+                  Text('v 1.4.1'),
                 ],
               ),
             ),

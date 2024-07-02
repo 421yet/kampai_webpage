@@ -18,7 +18,7 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> {
-  ScrollController controller = ScrollController();
+  final ScrollController _controller = ScrollController();
   final _formKey = GlobalKey<FormState>();
 
   String _title2Send = '';
@@ -53,9 +53,10 @@ class _ContactState extends State<Contact> {
       // backgroundColor: Colors.black,
       drawer: KampaiDrawer(context).builder(),
       body: CustomScrollView(
-        controller: controller,
+        controller: _controller,
         slivers: BodyfulSliverAppBar.build(
           context,
+          _controller,
           Column(
             children: [
               Padding(
@@ -80,7 +81,7 @@ class _ContactState extends State<Contact> {
                     ),
                   ),
                   onPressed: () =>
-                      controller.jumpTo(controller.position.maxScrollExtent),
+                      _controller.jumpTo(_controller.position.maxScrollExtent),
                 ),
               ),
               Flex(

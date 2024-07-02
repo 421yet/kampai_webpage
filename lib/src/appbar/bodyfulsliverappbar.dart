@@ -10,7 +10,8 @@ import 'package:url_launcher/url_launcher_string.dart';
 class BodyfulSliverAppBar {
   // const BodyfulSliverAppBar();
 
-  static List<Widget> build(BuildContext context, Widget body) {
+  static List<Widget> build(
+      BuildContext context, ScrollController controller, Widget body) {
     return <Widget>[
       _kampaiAppBarKernel(context),
       SliverToBoxAdapter(child: body),
@@ -198,7 +199,10 @@ class BodyfulSliverAppBar {
                                 ),
                               ),
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              controller
+                                  .jumpTo(controller.position.minScrollExtent);
+                            }),
                       ),
                     ],
                   ),

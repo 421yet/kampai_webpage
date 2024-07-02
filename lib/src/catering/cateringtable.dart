@@ -101,48 +101,55 @@ class _CateringTableState extends State<CateringTable> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Row(
-            children: [
-              const Text('Explore our catering options in depth using our '),
-              ElevatedButton(
-                style: TextButton.styleFrom(
-                  minimumSize: Size.zero, // Set this
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 12, horizontal: 8), // and this
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Wrap(
+        direction: Axis.vertical,
+        alignment: WrapAlignment.center,
+        runAlignment: WrapAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
+              children: [
+                const Text('Further explore your catering options using our '),
+                ElevatedButton(
+                  style: TextButton.styleFrom(
+                    minimumSize: Size.zero, // Set this
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 12, horizontal: 8), // and this
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Text('Google Sheets'),
+                      SvgPicture.asset(
+                        'assets/images/menu/Google_Sheets.svg',
+                        height: 18,
+                      ),
+                      const Text(' Tool'),
+                    ],
+                  ),
+                  onPressed: () {
+                    launchUrl(Uri.parse(
+                        'https://docs.google.com/spreadsheets/d/1QAZJdcIPVDhRowuiLAdVRS17LTFZOzQlP35ylqamZcw/edit?usp=sharing'));
+                  },
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Text('Google Sheets'),
-                    SvgPicture.asset(
-                      'assets/images/menu/Google_Sheets.svg',
-                      height: 20,
-                    ),
-                    const Text(' Tool'),
-                  ],
-                ),
-                onPressed: () {
-                  launchUrl(Uri.parse(
-                      'https://docs.google.com/spreadsheets/d/1QAZJdcIPVDhRowuiLAdVRS17LTFZOzQlP35ylqamZcw/edit?usp=sharing'));
-                },
-              ),
-              const Text('.'),
-            ],
+                const Text('.'),
+              ],
+            ),
           ),
-        ),
-        Table(
-          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-          border: TableBorder.symmetric(
-            inside: BorderSide(color: Colors.white.withOpacity(.25)),
-            outside: BorderSide(color: Colors.white.withOpacity(.25)),
+          Table(
+            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+            defaultColumnWidth: const FixedColumnWidth(150),
+            border: TableBorder.symmetric(
+              inside: BorderSide(color: Colors.white.withOpacity(.25)),
+              outside: BorderSide(color: Colors.white.withOpacity(.25)),
+            ),
+            children: tableSkeleton,
           ),
-          children: tableSkeleton,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
