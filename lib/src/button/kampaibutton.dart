@@ -15,70 +15,79 @@ class KampaiButton extends StatefulWidget {
 // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
 
 class _KampaiButtonState extends State<KampaiButton>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    duration: const Duration(milliseconds: 100),
+    duration: const Duration(milliseconds: 1000),
     vsync: this,
-  )..fling(); // ?????????????????????????
-  Offset? mousePos = Offset.zero;
-  final GlobalKey _key = GlobalKey(); // expensive...
+  )..fling(
+      velocity: 1,
+      springDescription: SpringDescription.withDampingRatio(
+          mass: 1, stiffness: 1, ratio: 1)); // ?????????????????????????
+  Offset mousePos = Offset.zero;
+  late Offset position;
+  final GlobalKey _key = GlobalKey(); // "expensive"...
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (event) {
-        setState(() {
-          mousePos = event.position;
-        });
-      },
+    return Padding(
+      padding: const EdgeInsets.all(12),
       child: AnimatedBuilder(
           animation: _controller,
-          child: Padding(
-            // TODO Consider AnimatedPadding
-            padding: const EdgeInsets.all(12),
-            child: ElevatedButton(
-              key: _key,
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(16),
-                // minimumSize: const Size(60, 300),
-                backgroundColor: const Color.fromARGB(255, 225, 28, 13),
-                elevation: 7,
-                shadowColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              onPressed: widget.onPressed,
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxHeight: 300),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        '◆',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ),
-                    const Spacer(),
-                    widget.child,
-                    const Spacer(),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          builder: (BuildContext context, Widget? child) {
+          builder: (BuildContext context, Widget? whatFor) {
             return Transform.rotate(
               origin: const Offset(0, -131),
-              angle: arctanOffset(mousePos, _key.),
-              child: child,
+              angle: arctanOffset(mousePos, findXY(_key)),
+              child: MouseRegion(
+                onExit: (event) {
+                  setState(() {
+                    mousePos = event.position;
+                  });
+                },
+                child: ElevatedButton(
+                  key: _key,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(16),
+                    // minimumSize: const Size(60, 300),
+                    backgroundColor: const Color.fromARGB(255, 225, 28, 13),
+                    elevation: 7,
+                    shadowColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                  onPressed: widget.onPressed,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 300),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            '◆',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 10,
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+                        widget.child,
+                        const Spacer(),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             );
           }),
     );
+  }
+
+  Offset findXY(GlobalKey key) {
+    BuildContext? context = key.currentContext;
+    if (context == null) return mousePos;
+    RenderBox box = context.findRenderObject() as RenderBox;
+    return box.localToGlobal(Offset.zero);
   }
 }

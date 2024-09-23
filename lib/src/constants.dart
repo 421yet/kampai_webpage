@@ -79,5 +79,6 @@ Offset findPos(GlobalKey key) {
 
 double arctanOffset(Offset? pos, Offset pos_0) {
   if (pos == null) return 0;
+  if (pos == pos_0) return 0;
   return atan((pos.dx - pos_0.dx) / (pos.dy - pos_0.dy));
 }
