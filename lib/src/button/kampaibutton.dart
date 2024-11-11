@@ -13,6 +13,7 @@ class KampaiButton extends StatefulWidget {
 }
 
 // TODO "dragged along" by the mouse up to a certain point, inertian swing post said point.
+// Resistance to being dragged along?
 
 class _KampaiButtonState extends State<KampaiButton>
     with SingleTickerProviderStateMixin {
