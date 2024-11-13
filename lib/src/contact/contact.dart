@@ -140,7 +140,7 @@ class _ContactState extends State<Contact> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            'Send Us an Email.',
+                            'Send Us an Email',
                             style: GoogleFonts.prata(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
